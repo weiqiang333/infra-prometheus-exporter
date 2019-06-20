@@ -1,0 +1,12 @@
+[Unit]
+Description=Hbase regionserver Exporter
+
+[Service]
+User=apps
+Group=apps
+Restart=always
+EnvironmentFile=/etc/sysconfig/regionserver_exporter
+ExecStart=/usr/sbin/regionserver_exporter $OPTIONS
+
+[Install]
+WantedBy=multi-user.target
