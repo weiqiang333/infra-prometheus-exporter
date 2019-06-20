@@ -1,0 +1,12 @@
+[Unit]
+Description=JournalNode Exporter
+
+[Service]
+User=apps
+Group=apps
+Restart=always
+EnvironmentFile=/etc/sysconfig/journalnode_exporter
+ExecStart=/usr/sbin/journalnode_exporter $OPTIONS
+
+[Install]
+WantedBy=multi-user.target
